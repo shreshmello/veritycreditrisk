@@ -1,58 +1,68 @@
 
-"""
-Verity - Credit Risk Assessment
-Dataset loading module.
-
-Source: UCI South German Credit Dataset
-"""
-
-from ucimlrepo import fetch_ucirepo
+import io
+import urllib.request
+import zipfile
 import pandas as pd
 
+DATA_URL = (
+    "https://archive.ics.uci.edu/static/public/522/"
+    "south%2Bgerman%2Bcredit.zip"
+)
 
-def load_credit_data():
-    """
-    Download and load the South German Credit dataset.
 
-    Returns:
-        X: Feature dataframe
-        y: Target series
-    """
-
+def load_dataset():
     print("Downloading South German Credit dataset...")
 
-    dataset = fetch_ucirepo(id=522)
+    response = urllib.request.urlopen(DATA_URL)
 
-    X = dataset.data.features.copy()
-    y = dataset.data.targets.copy()
+    with zipfile.ZipFile(io.BytesIO(response.read())) as archive:
+        with archive.open("SouthGermanCredit.asc") as file:
+            df = pd.read_csv(
+                file,
+                sep=r"\s+",
+                engine="python"
+            )
 
-    # Normalize target into a Series
-    if isinstance(y, pd.DataFrame):
-        y = y.iloc[:, 0]
+    # Validate the downloaded dataset
+    required_columns = {
+        "kredit", "alter", "famges", "laufzeit", "hoehe"
+    }
 
-    print("\nDataset successfully loaded!")
-    print(f"Number of records: {len(X)}")
-    print(f"Number of features: {X.shape[1]}")
+    if not required_columns.issubset(df.columns):
+        raise ValueError("Dataset is missing required columns.")
 
-    return X, y
+    if set(df["kredit"].unique()) != {0, 1}:
+        raise ValueError("Unexpected target encoding.")
 
+    # Target: 1 = good, 0 = bad
+    y = df["kredit"].map({
+        1: "good",
+        0: "bad"
+    })
 
-def inspect_data(X, y):
-    """Display a basic dataset overview."""
+    # Keep demographic information separately for fairness auditing
+    audit_data = pd.DataFrame({
+        "age": df["alter"],
+        "personal_status_sex_code": df["famges"]
+    })
 
-    print("\n--- FEATURE INFORMATION ---")
-    print(X.info())
+    # Exclude target and protected attributes from model inputs
+    X = df.drop(
+        columns=["kredit", "alter", "famges"]
+    ).copy()
 
-    print("\n--- MISSING VALUES ---")
-    print(X.isnull().sum())
+    # These are category codes, not continuous measurements
+    categorical_columns = [
+        col for col in X.columns
+        if col not in ["laufzeit", "hoehe"]
+    ]
 
-    print("\n--- TARGET DISTRIBUTION ---")
-    print(y.value_counts(dropna=False))
+    for col in categorical_columns:
+        X[col] = X[col].astype(str)
 
-    print("\n--- SAMPLE RECORDS ---")
-    print(X.head())
+    print("Dataset loaded successfully!")
+    print("Features:", X.shape)
+    print("Target distribution:")
+    print(y.value_counts())
 
-
-if __name__ == "__main__":
-    X, y = load_credit_data()
-    inspect_data(X, y)
+    return X, y, audit_data

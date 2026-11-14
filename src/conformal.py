@@ -1,77 +1,44 @@
 
-"""
-Verity: Conformal prediction and deferral.
-"""
-
 import numpy as np
-
 from mapie.classification import SplitConformalClassifier
 
 
-def calibrate_model(
-    estimator,
-    X_calibration,
-    y_calibration,
-    confidence_level=0.90,
+def build_conformal_model(
+    trained_estimator,
+    X_cal,
+    y_cal,
+    confidence_level=0.90
 ):
-    """Calibrate a previously trained classifier."""
-
     conformal_model = SplitConformalClassifier(
-        estimator=estimator,
+        estimator=trained_estimator,
         confidence_level=confidence_level,
         conformity_score="lac",
-        prefit=True,
+        prefit=True
     )
 
-    conformal_model.conformalize(
-        X_calibration,
-        y_calibration,
-    )
+    conformal_model.conformalize(X_cal, y_cal)
 
     return conformal_model
 
 
-def predict_with_deferral(conformal_model, X_test):
-    """
-    Generate prediction sets and convert them into
-    automated classifications or human-review deferrals.
-
-    One-label set: automated classification.
-    Two-label or empty set: defer.
-    """
-
+def predict_with_sets(conformal_model, X, classes):
     predicted_labels, prediction_sets = (
-        conformal_model.predict_set(X_test)
+        conformal_model.predict_set(X)
     )
 
-    classes = conformal_model.estimator.classes_
-
-    results = []
-
-    # MAPIE prediction sets have shape:
+    # MAPIE returns shape:
     # (samples, classes, confidence_levels)
-    for i, predicted_label in enumerate(predicted_labels):
+    prediction_sets = np.asarray(prediction_sets)
 
-        included_classes = [
-            str(classes[j])
-            for j in range(len(classes))
-            if bool(prediction_sets[i, j, 0])
+    prediction_sets = prediction_sets[:, :, 0]
+
+    readable_sets = []
+
+    for row in prediction_sets:
+        selected_classes = np.asarray(classes)[
+            row.astype(bool)
         ]
 
-        if len(included_classes) == 1:
-            decision = included_classes[0]
-            action = "AUTOMATED_CLASSIFICATION"
+        readable_sets.append(selected_classes.tolist())
 
-        else:
-            decision = "uncertain"
-            action = "DEFER_FOR_HUMAN_REVIEW"
-
-        results.append({
-            "predicted_label": str(predicted_label),
-            "prediction_set": included_classes,
-            "decision": decision,
-            "action": action,
-        })
-
-    return results
-
+    return predicted_labels, readable_sets
