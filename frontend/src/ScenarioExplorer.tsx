@@ -175,14 +175,22 @@ function ScenarioExplorer({ initialValues, onBack }: Props) {
   return (
     <main className="scenario-page">
       <header className="scenario-nav">
-        <button className="scenario-brand" onClick={onBack}>
-          <span className="scenario-brand-mark">v.</span>
-          <span>verity</span>
+        <button
+          className="scenario-brand"
+          onClick={onBack}
+          type="button"
+          aria-label="Return to Verity assessment"
+        >
+          <img src="/verity-logo.png" alt="Verity" />
         </button>
 
         <span className="scenario-nav-label">SCENARIO EXPLORER</span>
 
-        <button className="scenario-exit" onClick={onBack}>
+        <button
+          className="scenario-exit"
+          onClick={onBack}
+          type="button"
+        >
           Back to assessment
         </button>
       </header>

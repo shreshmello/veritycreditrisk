@@ -1,16 +1,26 @@
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* =========================================
+   1. GLOBAL STYLES
+   ========================================= */
 
 :root {
   font-family: 'DM Sans', sans-serif;
-  color: #172c34;
-  background: #fafbf9;
+  color: #111D3B;
+  background: #FAFAFD;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --navy: #18343d;
-  --teal: #397c72;
-  --muted: #718087;
-  --cream: #fafbf9;
+  --navy: #111D3B;
+  --indigo: #3435AD;
+  --violet: #7955E5;
+  --primary: #5144C8;
+  --muted: #70788F;
+  --light-muted: #9299AA;
+  --cream: #FAFAFD;
+  --lavender: #EEEAFE;
+  --border: #E7E8F0;
 }
 
 * {
@@ -19,15 +29,26 @@
 
 html {
   scroll-behavior: smooth;
+  min-width: 320px;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  color: var(--navy);
+  background: var(--cream);
 }
 
-button, a {
+button,
+input,
+textarea,
+select,
+a {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 a {
@@ -35,92 +56,190 @@ a {
   text-decoration: none;
 }
 
-button {
-  cursor: pointer;
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(121, 85, 229, 0.3);
+  outline-offset: 3px;
 }
+
+/* =========================================
+   2. NAVIGATION
+   ========================================= */
 
 .navbar {
+  position: relative;
+  z-index: 30;
+  width: 100%;
+  max-width: 1440px;
   height: 82px;
-  max-width: 1240px;
-  margin: auto;
-  padding: 0 42px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #e9eeeb;
-}
+  min-height: 82px;
+  margin: 0 auto;
+  padding: 0 48px;
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--navy);
-  font-family: 'Manrope', sans-serif;
-  font-size: 25px;
-  font-weight: 800;
-  letter-spacing: -1.4px;
-}
-
-.brand-mark {
-  width: 34px;
-  height: 34px;
   display: grid;
-  place-items: center;
-  border-radius: 11px;
-  background: var(--navy);
-  color: white;
-  font-size: 21px;
-  letter-spacing: -2px;
+  grid-template-columns: 200px minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 28px;
+
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--border);
 }
+
+/* Logo */
+
+.navbar .brand {
+  width: 200px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar .verity-logo {
+  display: block;
+  width: 185px;
+  max-width: 100%;
+  max-height: 54px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Center navigation */
 
 .nav-links {
+  min-width: 0;
   display: flex;
-  gap: 38px;
-  color: #64747a;
-  font-size: 13px;
-  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2.2vw, 32px);
+  white-space: nowrap;
 }
 
-.nav-links a:hover {
-  color: var(--teal);
+.nav-links a,
+.nav-links .research-nav-link {
+  height: 40px;
+  padding: 0;
+  margin: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+  color: var(--muted);
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links .research-nav-link:hover {
+  color: var(--violet);
+}
+
+/* Right-side account controls */
+
+.account-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.history-nav-button {
+  height: 40px;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+  color: var(--muted);
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.history-nav-button:hover {
+  color: var(--violet);
+}
+
+.account-email {
+  max-width: 145px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--light-muted);
+  font-size: 11px;
+  font-weight: 400;
 }
 
 .nav-cta {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 11px 17px;
-  border: 1px solid #dce5e1;
+  justify-content: center;
+
+  padding: 10px 15px;
+  border: 1px solid #E2DDF8;
   border-radius: 8px;
-  color: var(--navy);
+
+  background: white;
+  color: var(--indigo);
+
+  font-family: 'DM Sans', sans-serif;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
+
+  transition: background 0.2s ease;
 }
 
 .nav-cta:hover {
-  background: #edf4f0;
+  background: var(--lavender);
 }
 
 .mobile-menu {
   display: none;
-  border: 0;
+  padding: 6px;
+  border: none;
   background: transparent;
-  color: var(--navy);
+  color: var(--indigo);
 }
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
 
 .hero {
   max-width: 1240px;
   min-height: 590px;
   margin: auto;
   padding: 82px 64px 90px;
+
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: 60px;
+
+  background: var(--cream);
 }
 
-.eyebrow, .section-kicker {
-  color: var(--teal);
+.eyebrow,
+.section-kicker {
+  color: var(--primary);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.8px;
@@ -132,11 +251,13 @@ button {
   gap: 10px;
 }
 
-.eyebrow-dot, .live-dot {
+.eyebrow-dot,
+.live-dot {
   width: 7px;
   height: 7px;
+  flex-shrink: 0;
   border-radius: 50%;
-  background: #68a998;
+  background: var(--violet);
 }
 
 .hero h1 {
@@ -150,12 +271,12 @@ button {
 }
 
 .hero h1 span {
-  color: var(--teal);
+  color: var(--violet);
 }
 
 .hero-description {
   max-width: 475px;
-  color: #718087;
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.9;
 }
@@ -170,29 +291,36 @@ button {
 .primary-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 13px;
+
   padding: 15px 20px;
   border-radius: 8px;
-  background: var(--navy);
+
+  background: linear-gradient(110deg, var(--indigo), var(--violet));
   color: white;
+
   font-size: 13px;
   font-weight: 700;
+
+  box-shadow: 0 7px 18px rgba(81, 68, 200, 0.16);
   transition: transform 0.2s, background 0.2s;
 }
 
 .primary-button:hover {
   transform: translateY(-2px);
-  background: #28515a;
+  background: linear-gradient(110deg, #292A91, #6842D5);
 }
 
 .secondary-button {
-  color: #50646a;
+  color: var(--primary);
   font-size: 13px;
   font-weight: 600;
+  transition: color 0.2s;
 }
 
 .secondary-button:hover {
-  color: var(--teal);
+  color: var(--violet);
 }
 
 .trust-note {
@@ -200,13 +328,17 @@ button {
   align-items: center;
   gap: 9px;
   margin-top: 43px;
-  color: #819087;
+  color: var(--muted);
   font-size: 11px;
 }
 
 .trust-note svg {
-  color: var(--teal);
+  color: var(--violet);
 }
+
+/* =========================================
+   4. HERO VISUAL
+   ========================================= */
 
 .hero-visual {
   position: relative;
@@ -221,7 +353,12 @@ button {
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: #eaf2ed;
+  background: radial-gradient(
+    circle,
+    rgba(121, 85, 229, 0.15),
+    rgba(52, 53, 173, 0.04),
+    transparent 72%
+  );
   filter: blur(2px);
 }
 
@@ -230,10 +367,12 @@ button {
   z-index: 1;
   width: min(100%, 390px);
   padding: 27px;
-  border: 1px solid #e6ece8;
+
+  border: 1px solid #E7E4F5;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 22px 65px rgba(31, 62, 56, 0.09);
+
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 22px 65px rgba(31, 32, 93, 0.09);
 }
 
 .insight-top {
@@ -248,13 +387,13 @@ button {
   display: grid;
   place-items: center;
   border-radius: 9px;
-  background: #eaf3ef;
-  color: var(--teal);
+  background: var(--lavender);
+  color: var(--primary);
 }
 
 .insight-label {
   flex: 1;
-  color: #82918b;
+  color: var(--muted);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -270,7 +409,7 @@ button {
 
 .insight-card > p {
   margin: 0;
-  color: #829087;
+  color: var(--muted);
   font-size: 12px;
   line-height: 1.7;
 }
@@ -278,7 +417,7 @@ button {
 .insight-divider {
   height: 1px;
   margin: 22px 0;
-  background: #edf0ed;
+  background: var(--border);
 }
 
 .insight-row {
@@ -291,39 +430,41 @@ button {
 .insight-row-icon {
   width: 34px;
   height: 34px;
+  flex-shrink: 0;
   display: grid;
   place-items: center;
   border-radius: 9px;
 }
 
 .teal {
-  color: #438c7c;
-  background: #eaf4ef;
+  color: var(--primary);
+  background: var(--lavender);
 }
 
 .gold {
-  color: #a67c3c;
-  background: #f7f1e5;
+  color: #9A6A24;
+  background: #FFF5E5;
 }
 
 .blue {
-  color: #587c9b;
-  background: #edf2f6;
+  color: var(--indigo);
+  background: #EEF0FF;
 }
 
-.insight-row strong, .insight-row span {
+.insight-row strong,
+.insight-row span {
   display: block;
 }
 
 .insight-row strong {
-  color: #30464b;
+  color: var(--navy);
   font-size: 12px;
   font-weight: 700;
 }
 
 .insight-row span {
   margin-top: 4px;
-  color: #8a9691;
+  color: var(--muted);
   font-size: 10px;
 }
 
@@ -334,8 +475,8 @@ button {
   margin-top: 22px;
   padding: 12px;
   border-radius: 7px;
-  background: #f3f7f3;
-  color: #638276;
+  background: #F2F0FF;
+  color: var(--primary);
   font-size: 10px;
   font-weight: 600;
 }
@@ -345,21 +486,25 @@ button {
   z-index: 2;
   right: -5px;
   bottom: 23px;
+
   display: flex;
   align-items: center;
   gap: 10px;
+
   padding: 13px 17px;
-  border: 1px solid #e8ede8;
+  border: 1px solid #E7E4F5;
   border-radius: 10px;
+
   background: white;
-  box-shadow: 0 10px 30px rgba(31, 62, 56, 0.08);
+  box-shadow: 0 10px 30px rgba(31, 32, 93, 0.08);
 }
 
 .floating-note-icon {
-  color: var(--teal);
+  color: var(--violet);
 }
 
-.floating-note strong, .floating-note span {
+.floating-note strong,
+.floating-note span {
   display: block;
 }
 
@@ -370,13 +515,17 @@ button {
 
 .floating-note div span {
   margin-top: 3px;
-  color: #89958e;
+  color: var(--muted);
   font-size: 10px;
 }
 
+/* =========================================
+   5. PATHWAYS SECTION
+   ========================================= */
+
 .pathways {
   padding: 88px 30px 100px;
-  background: #f0f4f0;
+  background: #F2F1FA;
 }
 
 .section-heading {
@@ -385,7 +534,9 @@ button {
   text-align: center;
 }
 
-.section-heading h2, .how-intro h2, .principles-heading h2 {
+.section-heading h2,
+.how-intro h2,
+.principles-heading h2 {
   margin: 14px 0;
   color: var(--navy);
   font-family: 'Manrope', sans-serif;
@@ -394,8 +545,10 @@ button {
   letter-spacing: -1.5px;
 }
 
-.section-heading p, .how-intro > p, .principles-heading > p {
-  color: #788781;
+.section-heading p,
+.how-intro > p,
+.principles-heading > p {
+  color: var(--muted);
   font-size: 13px;
   line-height: 1.8;
 }
@@ -410,15 +563,16 @@ button {
 
 .path-card {
   padding: 30px;
-  border: 1px solid #e1e9e3;
+  border: 1px solid #E7E4F5;
   border-radius: 13px;
   background: white;
+  box-shadow: 0 4px 18px rgba(31, 32, 93, 0.025);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .path-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(35, 68, 56, 0.07);
+  box-shadow: 0 15px 35px rgba(52, 53, 173, 0.09);
 }
 
 .path-card-top {
@@ -433,17 +587,17 @@ button {
   display: grid;
   place-items: center;
   border-radius: 11px;
-  background: #eaf3ee;
-  color: var(--teal);
+  background: var(--lavender);
+  color: var(--primary);
 }
 
 .business-icon {
-  background: #eef1f4;
-  color: #607b8b;
+  background: #EDEBFA;
+  color: var(--indigo);
 }
 
 .path-number {
-  color: #9aa59f;
+  color: var(--light-muted);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 1.3px;
@@ -460,7 +614,7 @@ button {
 
 .path-card > p {
   min-height: 90px;
-  color: #7b8983;
+  color: var(--muted);
   font-size: 12px;
   line-height: 1.8;
 }
@@ -477,12 +631,12 @@ button {
   display: flex;
   align-items: center;
   gap: 9px;
-  color: #52675f;
+  color: #59627A;
   font-size: 11px;
 }
 
 .path-features svg {
-  color: var(--teal);
+  color: var(--violet);
 }
 
 .path-button {
@@ -490,43 +644,50 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 15px 16px;
   border: 0;
   border-radius: 7px;
-  background: var(--navy);
+
+  background: linear-gradient(110deg, var(--indigo), var(--violet));
   color: white;
+
   font-size: 11px;
   font-weight: 700;
   transition: background 0.2s;
 }
 
 .path-button:hover {
-  background: #28515a;
+  background: linear-gradient(110deg, #292A91, #6842D5);
 }
 
 .business-card .path-button {
-  background: #eaf0ed;
-  color: var(--navy);
+  background: var(--lavender);
+  color: var(--indigo);
 }
 
 .business-card .path-button:hover {
-  background: #dce9e2;
+  background: #E2DDFB;
 }
+
+/* Selection panel */
 
 .selection-panel {
   max-width: 920px;
   margin: 22px auto 0;
   padding: 19px 22px;
+
   display: flex;
   align-items: center;
   gap: 14px;
-  border: 1px solid #cbded3;
+
+  border: 1px solid #DAD4F7;
   border-radius: 10px;
   background: white;
 }
 
 .selection-check {
-  color: var(--teal);
+  color: var(--violet);
 }
 
 .selection-panel strong {
@@ -536,7 +697,7 @@ button {
 
 .selection-panel p {
   margin: 5px 0 0;
-  color: #77857e;
+  color: var(--muted);
   font-size: 11px;
   line-height: 1.6;
 }
@@ -545,19 +706,25 @@ button {
   margin-left: auto;
   border: 0;
   background: transparent;
-  color: #829087;
+  color: var(--muted);
 }
+
+/* =========================================
+   6. HOW IT WORKS
+   ========================================= */
 
 .how-section {
   max-width: 1080px;
   margin: auto;
   padding: 105px 50px;
+
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 100px;
 }
 
-.how-intro h2, .principles-heading h2 {
+.how-intro h2,
+.principles-heading h2 {
   font-size: 32px;
 }
 
@@ -574,33 +741,40 @@ button {
   display: flex;
   gap: 21px;
   padding-bottom: 24px;
-  border-bottom: 1px solid #e8eeea;
+  border-bottom: 1px solid var(--border);
 }
 
 .how-step > span {
-  color: #76a394;
+  color: var(--violet);
   font-family: 'Manrope', sans-serif;
   font-size: 13px;
   font-weight: 800;
+  flex-shrink: 0;
 }
 
-.how-step h3, .principle-item h3 {
+.how-step h3,
+.principle-item h3 {
   margin: 0 0 8px;
   color: var(--navy);
   font-size: 14px;
 }
 
-.how-step p, .principle-item p {
+.how-step p,
+.principle-item p {
   max-width: 390px;
   margin: 0;
-  color: #7e8b85;
+  color: var(--muted);
   font-size: 12px;
   line-height: 1.8;
 }
 
+/* =========================================
+   7. PRINCIPLES
+   ========================================= */
+
 .principles-section {
   padding: 85px 30px;
-  background: #f0f4f0;
+  background: #F2F1FA;
 }
 
 .principles-heading {
@@ -612,6 +786,7 @@ button {
 .principle-items {
   max-width: 1000px;
   margin: 50px auto 0;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 35px;
@@ -631,44 +806,129 @@ button {
   place-items: center;
   border-radius: 10px;
   background: white;
-  color: var(--teal);
+  color: var(--primary);
 }
 
 .principle-item h3 {
   margin-top: 2px;
 }
 
+/* =========================================
+   8. FOOTER
+   ========================================= */
+
 .footer {
   max-width: 1160px;
   margin: auto;
-  padding: 38px 40px;
+  padding: 42px 40px;
+
   display: flex;
   align-items: center;
-  gap: 22px;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+
+  border-top: 1px solid var(--border);
 }
 
 .footer-brand {
-  font-size: 21px;
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
 }
 
-.footer-brand .brand-mark {
-  width: 30px;
-  height: 30px;
-  font-size: 18px;
+.footer .verity-logo {
+  display: block;
+  width: 250px;
+  max-height: 75px;
+  height: auto;
+  object-fit: contain;
 }
 
 .footer > p {
-  color: #788781;
+  color: var(--muted);
   font-size: 11px;
 }
 
 .footer-caption {
   margin-left: auto;
-  color: #9aa59f;
+  color: var(--light-muted);
   font-size: 10px;
 }
 
-@media (max-width: 850px) {
+/* =========================================
+   9. RESEARCH LINKS
+   ========================================= */
+
+.research-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+
+  border: none;
+  background: transparent;
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.research-footer-link:hover {
+  color: var(--violet);
+}
+
+/* =========================================
+   10. LOADING STATE
+   ========================================= */
+
+.app-loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: var(--indigo);
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+}
+
+/* =========================================
+   11. TABLET RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 1100px) {
+  .navbar {
+    padding: 0 28px;
+    grid-template-columns: 165px minmax(0, 1fr) auto;
+    column-gap: 16px;
+  }
+
+  .navbar .brand {
+    width: 165px;
+  }
+
+  .navbar .verity-logo {
+    width: 160px;
+  }
+
+  .nav-links {
+    gap: 17px;
+  }
+
+  .nav-links a,
+  .nav-links .research-nav-link,
+  .history-nav-button {
+    font-size: 13px;
+  }
+
+  .account-actions {
+    gap: 10px;
+  }
+
+  .account-email {
+    display: none;
+  }
+
   .hero {
     padding: 65px 35px;
     gap: 25px;
@@ -687,39 +947,108 @@ button {
   }
 }
 
-@media (max-width: 650px) {
+/* =========================================
+   12. MOBILE NAVIGATION
+   ========================================= */
+
+@media (max-width: 850px) {
   .navbar {
-    height: 70px;
-    padding: 0 21px;
+    height: 76px;
+    min-height: 76px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .navbar .brand {
+    width: auto;
+  }
+
+  .navbar .verity-logo {
+    width: 165px;
+    max-height: 50px;
   }
 
   .nav-links {
     position: absolute;
-    z-index: 10;
-    top: 70px;
+    z-index: 40;
+    top: 76px;
     left: 0;
     right: 0;
+
     display: none;
-    padding: 22px;
+    padding: 22px 25px;
+
     flex-direction: column;
-    gap: 22px;
+    align-items: stretch;
+    gap: 12px;
+
     background: white;
-    border-bottom: 1px solid #e8eeea;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 12px 24px rgba(17, 29, 59, 0.06);
   }
 
   .nav-links.nav-open {
     display: flex;
   }
 
-  .nav-cta {
+  .nav-links a,
+  .nav-links .research-nav-link {
+    width: 100%;
+    height: 42px;
+    justify-content: flex-start;
+    font-size: 15px;
+  }
+
+  .account-actions {
     margin-left: auto;
-    margin-right: 15px;
-    padding: 9px 11px;
-    font-size: 11px;
+    gap: 10px;
+  }
+
+  .account-email {
+    display: none;
   }
 
   .mobile-menu {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* =========================================
+   13. SMALL MOBILE SCREENS
+   ========================================= */
+
+@media (max-width: 650px) {
+  .navbar {
+    height: 72px;
+    min-height: 72px;
+    padding: 0 20px;
+  }
+
+  .navbar .verity-logo {
+    width: 155px;
+    max-height: 48px;
+  }
+
+  .nav-links {
+    top: 72px;
+  }
+
+  .account-actions {
+    gap: 7px;
+  }
+
+  .history-nav-button {
+    font-size: 12px;
+    padding: 0 5px;
+  }
+
+  .nav-cta {
+    padding: 8px 10px;
+    font-size: 11px;
   }
 
   .hero {
@@ -750,7 +1079,9 @@ button {
     padding: 70px 20px;
   }
 
-  .section-heading h2, .how-intro h2, .principles-heading h2 {
+  .section-heading h2,
+  .how-intro h2,
+  .principles-heading h2 {
     font-size: 28px;
   }
 
@@ -779,584 +1110,18 @@ button {
 
   .footer {
     padding: 30px 23px;
-    flex-wrap: wrap;
-    gap: 10px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .footer .verity-logo {
+    width: 220px;
+    max-height: 68px;
   }
 
   .footer-caption {
     width: 100%;
     margin-left: 0;
-  }
-}
-.app-loading {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  color: var(--navy);
-  font-family: 'Manrope', sans-serif;
-  font-size: 15px;
-}
-
-.account-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.account-email {
-  color: #718087;
-  font-size: 11px;
-}
-
-@media (max-width: 650px) {
-  .account-email {
-    display: none;
-  }
-
-  .account-actions {
-    margin-left: auto;
-    margin-right: 12px;
-  }
-}
-.history-nav-button {
-  border: 0;
-  background: transparent;
-  color: var(--navy);
-  font: inherit;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 10px 12px;
-}
-
-.history-nav-button:hover {
-  color: var(--teal);
-}
-.research-nav-link,
-.research-footer-link {
-  border: none;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 8px 0;
-}
-
-.research-nav-link:hover,
-.research-footer-link:hover {
-  color: #397c72;
-}
-
-.research-footer-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
-.nav-links a,
-.nav-links .research-nav-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  padding: 0 8px;
-  margin: 0;
-  line-height: 1;
-  vertical-align: middle;
-}
-
-/* =========================================
-   VERITY — NAVY / INDIGO / VIOLET REDESIGN
-   ========================================= */
-
-/* Main brand colors */
-:root {
-  --navy: #111D3B;
-  --teal: #5144C8;
-  --muted: #70788F;
-  --cream: #FAFAFD;
-}
-
-/* Main page */
-body {
-  color: #111D3B;
-  background: #FAFAFD;
-}
-
-/* Navigation */
-.navbar {
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom-color: #E7E8F0;
-}
-
-.brand {
-  color: #111D3B;
-}
-
-.brand-mark {
-  background: linear-gradient(135deg, #3435AD, #7955E5);
-  color: white;
-  border-radius: 10px;
-}
-
-.nav-links {
-  color: #70788F;
-}
-
-.nav-links a:hover,
-.nav-links button:hover {
-  color: #7955E5;
-}
-
-.nav-cta {
-  border-color: #E2DDF8;
-  color: #3435AD;
-  background: white;
-}
-
-.nav-cta:hover {
-  background: #EEEAFE;
-}
-
-.mobile-menu {
-  color: #3435AD;
-}
-
-/* Hero */
-.hero {
-  background: #FAFAFD;
-}
-
-.eyebrow,
-.section-kicker {
-  color: #5144C8;
-}
-
-.eyebrow-dot,
-.live-dot {
-  background: #7955E5;
-}
-
-.hero h1 {
-  color: #111D3B;
-}
-
-.hero h1 span {
-  color: #7955E5;
-}
-
-.hero-description {
-  color: #70788F;
-}
-
-.primary-button {
-  background: linear-gradient(110deg, #3435AD, #7955E5);
-  color: white;
-  box-shadow: 0 7px 18px rgba(81, 68, 200, 0.16);
-}
-
-.primary-button:hover {
-  background: linear-gradient(110deg, #292A91, #6842D5);
-}
-
-.secondary-button {
-  color: #5144C8;
-}
-
-.secondary-button:hover {
-  color: #7955E5;
-}
-
-.trust-note {
-  color: #70788F;
-}
-
-.trust-note svg {
-  color: #7955E5;
-}
-
-/* Hero visual */
-.visual-glow {
-  background: radial-gradient(
-    circle,
-    rgba(121, 85, 229, 0.15),
-    rgba(52, 53, 173, 0.04),
-    transparent 72%
-  );
-}
-
-.insight-card {
-  border-color: #E7E4F5;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 22px 65px rgba(31, 32, 93, 0.09);
-}
-
-.insight-icon {
-  background: #EEEAFE;
-  color: #5144C8;
-}
-
-.insight-label {
-  color: #70788F;
-}
-
-.insight-card h3 {
-  color: #111D3B;
-}
-
-.insight-card > p {
-  color: #70788F;
-}
-
-.insight-divider {
-  background: #E7E8F0;
-}
-
-.insight-row strong {
-  color: #111D3B;
-}
-
-.insight-row span {
-  color: #70788F;
-}
-
-/* Insight indicators */
-.teal {
-  color: #5144C8;
-  background: #EEEAFE;
-}
-
-.gold {
-  color: #9A6A24;
-  background: #FFF5E5;
-}
-
-.blue {
-  color: #3435AD;
-  background: #EEF0FF;
-}
-
-.insight-footer {
-  background: #F2F0FF;
-  color: #5144C8;
-}
-
-.floating-note {
-  border-color: #E7E4F5;
-  box-shadow: 0 10px 30px rgba(31, 32, 93, 0.08);
-}
-
-.floating-note-icon {
-  color: #7955E5;
-}
-
-.floating-note strong {
-  color: #111D3B;
-}
-
-.floating-note div span {
-  color: #70788F;
-}
-
-/* Pathways */
-.pathways {
-  background: #F2F1FA;
-}
-
-.section-heading h2,
-.how-intro h2,
-.principles-heading h2 {
-  color: #111D3B;
-}
-
-.section-heading p,
-.how-intro > p,
-.principles-heading > p {
-  color: #70788F;
-}
-
-.path-card {
-  border-color: #E7E4F5;
-  box-shadow: 0 4px 18px rgba(31, 32, 93, 0.025);
-}
-
-.path-card:hover {
-  box-shadow: 0 15px 35px rgba(52, 53, 173, 0.09);
-}
-
-.path-icon {
-  background: #EEEAFE;
-  color: #5144C8;
-}
-
-.business-icon {
-  background: #EDEBFA;
-  color: #3435AD;
-}
-
-.path-number {
-  color: #9299AA;
-}
-
-.path-card h3 {
-  color: #111D3B;
-}
-
-.path-card > p {
-  color: #70788F;
-}
-
-.path-features li {
-  color: #59627A;
-}
-
-.path-features svg {
-  color: #7955E5;
-}
-
-.path-button {
-  background: linear-gradient(110deg, #3435AD, #7955E5);
-  color: white;
-}
-
-.path-button:hover {
-  background: linear-gradient(110deg, #292A91, #6842D5);
-}
-
-.business-card .path-button {
-  background: #EEEAFE;
-  color: #3435AD;
-}
-
-.business-card .path-button:hover {
-  background: #E2DDFB;
-}
-
-/* Selection panel */
-.selection-panel {
-  border-color: #DAD4F7;
-  background: white;
-}
-
-.selection-check {
-  color: #7955E5;
-}
-
-.selection-panel strong {
-  color: #111D3B;
-}
-
-.selection-panel p {
-  color: #70788F;
-}
-
-.selection-close {
-  color: #70788F;
-}
-
-/* How it works */
-.how-step {
-  border-bottom-color: #E7E8F0;
-}
-
-.how-step > span {
-  color: #7955E5;
-}
-
-.how-step h3,
-.principle-item h3 {
-  color: #111D3B;
-}
-
-.how-step p,
-.principle-item p {
-  color: #70788F;
-}
-
-/* Principles */
-.principles-section {
-  background: #F2F1FA;
-}
-
-.principle-icon {
-  background: white;
-  color: #5144C8;
-}
-
-/* Footer */
-.footer {
-  border-top: 1px solid #E7E8F0;
-}
-
-.footer > p {
-  color: #70788F;
-}
-
-.footer-caption {
-  color: #9299AA;
-}
-
-.research-nav-link:hover,
-.research-footer-link:hover {
-  color: #7955E5;
-}
-
-/* Account and loading states */
-.app-loading {
-  color: #3435AD;
-}
-
-.account-email {
-  color: #70788F;
-}
-
-.history-nav-button:hover {
-  color: #7955E5;
-}
-
-/* Focus states */
-button:focus-visible,
-a:focus-visible {
-  outline: 3px solid rgba(121, 85, 229, 0.3);
-  outline-offset: 3px;
-}
-
-/* Mobile navigation */
-@media (max-width: 650px) {
-  .nav-links {
-    background: white;
-    border-bottom-color: #E7E8F0;
-  }
-}
-
-/* =========================================
-   VERITY — LOGO AND NAVBAR REFINEMENT
-   ========================================= */
-
-/* Navbar */
-.navbar {
-  min-height: 82px;
-  height: 82px;
-  padding: 0 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-}
-
-/* Navbar logo */
-.navbar .brand {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  min-width: 0;
-}
-
-.navbar .verity-logo {
-  display: block;
-  width: 210px !important;
-  height: auto !important;
-  max-height: 58px !important;
-  object-fit: contain;
-}
-
-/* Navigation links */
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  flex: 1;
-  min-width: 0;
-}
-
-.nav-links a,
-.nav-links button {
-  white-space: nowrap;
-  font-size: 15px;
-  line-height: 1.3;
-}
-
-/* Account section */
-.account-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 20px;
-  flex: 0 0 auto;
-}
-
-.account-email {
-  white-space: nowrap;
-  font-size: 13px;
-}
-
-/* Footer */
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  flex-wrap: wrap;
-  padding: 48px 6%;
-}
-
-.footer .verity-logo {
-  display: block;
-  width: 340px !important;
-  height: auto !important;
-  max-height: 100px !important;
-  object-fit: contain;
-}
-
-.footer-brand {
-  flex: 0 1 auto;
-}
-
-/* Smaller screens */
-@media (max-width: 1050px) {
-  .navbar {
-    gap: 18px;
-  }
-
-  .navbar .verity-logo {
-    width: 175px !important;
-  }
-
-  .nav-links {
-    gap: 16px;
-  }
-
-  .account-actions {
-    gap: 12px;
-  }
-}
-
-@media (max-width: 650px) {
-  .navbar {
-    height: 72px;
-    min-height: 72px;
-    padding: 0 5%;
-  }
-
-  .navbar .verity-logo {
-    width: 155px !important;
-    max-height: 48px !important;
-  }
-
-  .footer .verity-logo {
-    width: 250px !important;
-    max-height: 75px !important;
-  }
-
-  .footer {
-    align-items: flex-start;
-    flex-direction: column;
   }
 }

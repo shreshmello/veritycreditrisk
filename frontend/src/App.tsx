@@ -563,14 +563,6 @@ function App() {
 
         <p>Making financial decisions clearer.</p>
 
-        <button
-          className="research-footer-link"
-          onClick={() => setShowResearch(true)}
-        >
-          Explore our research
-          <ArrowRight size={15} />
-        </button>
-
         <span className="footer-caption">
           A research-driven decision-support project.
         </span>

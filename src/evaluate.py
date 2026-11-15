@@ -51,8 +51,10 @@ def evaluate_model(name, y_true, predictions):
             pos_label="bad",
             zero_division=0
         ),
-        "false_approvals": int(false_approvals),
-        "false_rejections": int(false_rejections),
+       "true_good": int(good_correct),
+"true_bad": int(bad_correct),
+"false_approvals": int(false_approvals),
+"false_rejections": int(false_rejections),
         "total_cost": int(total_cost),
         "cost_per_applicant": total_cost / len(y_true)
     }

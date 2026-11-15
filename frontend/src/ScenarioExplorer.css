@@ -1,14 +1,14 @@
 
 /* =========================================
    VERITY — SCENARIO EXPLORER
-   Refined fintech design
+   Navy / Indigo / Lavender fintech design
    ========================================= */
 
 .scenario-page {
   min-height: 100vh;
   padding: 0 6%;
-  background: #fafbf9;
-  color: #19343b;
+  background: #FAFAFD;
+  color: #111D3B;
   font-family: inherit;
 }
 
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #e9eeea;
+  border-bottom: 1px solid #E7E8F0;
 }
 
 .scenario-brand {
@@ -28,7 +28,7 @@
   gap: 10px;
   border: 0;
   background: none;
-  color: #19343b;
+  color: #111D3B;
   font-size: 21px;
   font-weight: 800;
   letter-spacing: -0.8px;
@@ -41,13 +41,13 @@
   height: 34px;
   place-items: center;
   border-radius: 11px;
-  background: #286e65;
+  background: #3435AD;
   color: white;
   font-size: 17px;
 }
 
 .scenario-nav-label {
-  color: #899791;
+  color: #70788F;
   font-size: 10px;
   font-weight: 750;
   letter-spacing: 1.8px;
@@ -56,7 +56,7 @@
 .scenario-exit {
   border: 0;
   background: transparent;
-  color: #73827c;
+  color: #70788F;
   font: inherit;
   font-size: 12px;
   font-weight: 600;
@@ -65,7 +65,7 @@
 }
 
 .scenario-exit:hover {
-  color: #286e65;
+  color: #3435AD;
 }
 
 /* PAGE HEADER */
@@ -84,7 +84,7 @@
 .scenario-kicker {
   display: block;
   margin-bottom: 14px;
-  color: #43877a;
+  color: #7955E5;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.8px;
@@ -93,7 +93,7 @@
 
 .scenario-heading h1 {
   margin: 0 0 17px;
-  color: #19343b;
+  color: #111D3B;
   font-size: clamp(36px, 4.5vw, 51px);
   font-weight: 750;
   letter-spacing: -2.2px;
@@ -101,13 +101,13 @@
 }
 
 .scenario-heading h1 span {
-  color: #43877a;
+  color: #5145C5;
 }
 
 .scenario-heading p {
   max-width: 580px;
   margin: 0;
-  color: #788780;
+  color: #70788F;
   font-size: 14px;
   line-height: 1.85;
 }
@@ -140,12 +140,12 @@
   gap: 14px;
   margin-bottom: 30px;
   padding-bottom: 18px;
-  border-bottom: 1px solid #e7ece7;
+  border-bottom: 1px solid #E7E8F0;
 }
 
 .scenario-card-heading h2 {
   margin: 0;
-  color: #213b41;
+  color: #111D3B;
   font-size: 19px;
   font-weight: 750;
   letter-spacing: -0.7px;
@@ -155,11 +155,11 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  border: 1px solid #e1e9e3;
+  border: 1px solid #E7E8F0;
   border-radius: 7px;
   background: white;
   padding: 8px 11px;
-  color: #657970;
+  color: #70788F;
   font-family: inherit;
   font-size: 10px;
   font-weight: 700;
@@ -168,9 +168,9 @@
 }
 
 .scenario-reset:hover {
-  border-color: #a9c9bb;
-  color: #286e65;
-  background: #f4f8f4;
+  border-color: #C9C5F2;
+  color: #3435AD;
+  background: #F5F3FF;
 }
 
 /* CONTROLS */
@@ -188,13 +188,13 @@
 }
 
 .scenario-control-heading label {
-  color: #526760;
+  color: #48536D;
   font-size: 12px;
   font-weight: 700;
 }
 
 .scenario-control-heading strong {
-  color: #286e65;
+  color: #5145C5;
   font-size: 16px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
@@ -205,13 +205,13 @@
   height: 5px;
   margin: 0;
   border-radius: 20px;
-  background: #e3eae4;
-  accent-color: #43877a;
+  background: #E7E8F0;
+  accent-color: #5145C5;
   cursor: pointer;
 }
 
 .scenario-control input[type="range"]:focus-visible {
-  outline: 3px solid rgba(67, 135, 122, 0.2);
+  outline: 3px solid rgba(81, 69, 197, 0.2);
   outline-offset: 5px;
 }
 
@@ -219,7 +219,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 11px;
-  color: #9ba69f;
+  color: #9298AA;
   font-size: 10px;
 }
 
@@ -232,10 +232,10 @@
   margin: 38px 0 29px;
   padding: 16px;
   border: 0;
-  border-left: 3px solid #83ad9c;
+  border-left: 3px solid #7955E5;
   border-radius: 0 8px 8px 0;
-  background: #f0f5f0;
-  color: #43877a;
+  background: #F3F1FF;
+  color: #5145C5;
 }
 
 .scenario-original-note svg {
@@ -245,20 +245,20 @@
 
 .scenario-original-note p {
   margin: 0;
-  color: #6d7e74;
+  color: #62618B;
   font-size: 11px;
   line-height: 1.75;
 }
 
 .scenario-original-values {
   padding-top: 23px;
-  border-top: 1px solid #e7ece7;
+  border-top: 1px solid #E7E8F0;
 }
 
 .scenario-original-values > span {
   display: block;
   margin-bottom: 14px;
-  color: #8b9991;
+  color: #70788F;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.2px;
@@ -272,12 +272,12 @@
 }
 
 .scenario-original-values > div span {
-  color: #788780;
+  color: #70788F;
   font-size: 11px;
 }
 
 .scenario-original-values > div strong {
-  color: #304a4d;
+  color: #111D3B;
   font-size: 11px;
   font-weight: 750;
   font-variant-numeric: tabular-nums;
@@ -289,7 +289,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #548477;
+  color: #5145C5;
   font-size: 10px;
   font-weight: 700;
   white-space: nowrap;
@@ -299,8 +299,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #4d9a7d;
-  box-shadow: 0 0 0 3px #e8f2eb;
+  background: #7955E5;
+  box-shadow: 0 0 0 3px #EEEAFE;
 }
 
 /* PAYMENT COMPARISON */
@@ -315,20 +315,20 @@
 .scenario-payment-card {
   min-width: 0;
   padding: 23px 21px;
-  border: 1px solid #e6ebe6;
+  border: 1px solid #E7E8F0;
   border-radius: 11px;
-  background: #fff;
+  background: #FFFFFF;
 }
 
 .scenario-payment-card.featured {
-  border-color: #d1e3d7;
-  background: #eff6f0;
+  border-color: #DCD5FF;
+  background: #F3F1FF;
 }
 
 .scenario-payment-card span,
 .scenario-payment-card small {
   display: block;
-  color: #829087;
+  color: #70788F;
   font-size: 10px;
   line-height: 1.6;
 }
@@ -336,7 +336,7 @@
 .scenario-payment-card strong {
   display: block;
   margin: 13px 0 8px;
-  color: #2a4549;
+  color: #111D3B;
   font-size: clamp(20px, 2.2vw, 28px);
   font-weight: 800;
   letter-spacing: -1px;
@@ -345,11 +345,11 @@
 }
 
 .scenario-payment-card.featured strong {
-  color: #286e65;
+  color: #5145C5;
 }
 
 .scenario-payment-card small {
-  color: #98a39b;
+  color: #9298AA;
 }
 
 /* RESULT SECTIONS */
@@ -357,7 +357,7 @@
 .scenario-section {
   margin-top: 29px;
   padding-top: 26px;
-  border-top: 1px solid #e7ece7;
+  border-top: 1px solid #E7E8F0;
 }
 
 .scenario-section h3 {
@@ -365,14 +365,14 @@
   align-items: center;
   gap: 10px;
   margin: 0 0 23px;
-  color: #263f43;
+  color: #111D3B;
   font-size: 14px;
   font-weight: 750;
   letter-spacing: -0.2px;
 }
 
 .scenario-section h3 svg {
-  color: #43877a;
+  color: #5145C5;
 }
 
 /* METRICS */
@@ -390,13 +390,13 @@
 }
 
 .scenario-metric-heading span {
-  color: #75847c;
+  color: #70788F;
   font-size: 11px;
   font-weight: 650;
 }
 
 .scenario-metric-heading strong {
-  color: #30494b;
+  color: #111D3B;
   font-size: 13px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
@@ -416,12 +416,12 @@
 }
 
 .scenario-bar-row > span {
-  color: #849189;
+  color: #70788F;
   font-size: 10px;
 }
 
 .scenario-bar-row > strong {
-  color: #536761;
+  color: #48536D;
   font-size: 10px;
   font-weight: 750;
   font-variant-numeric: tabular-nums;
@@ -432,7 +432,7 @@
   height: 10px;
   overflow: hidden;
   border-radius: 20px;
-  background: #edf1ed;
+  background: #EEEFF5;
 }
 
 .scenario-bar {
@@ -442,15 +442,15 @@
 }
 
 .original-bar {
-  background: #a9c1b5;
+  background: #A7A9C8;
 }
 
 .adjusted-bar {
-  background: #43877a;
+  background: #5145C5;
 }
 
 .interest-bar {
-  background: #d2a66b;
+  background: #B58AD9;
 }
 
 /* BUDGET COMPARISON */
@@ -465,27 +465,27 @@
 .scenario-budget-card {
   min-width: 0;
   padding: 19px 18px;
-  border: 1px solid #e7ece7;
+  border: 1px solid #E7E8F0;
   border-radius: 10px;
   background: white;
 }
 
 .scenario-budget-card.adjusted {
-  border-color: #d5e5d8;
-  background: #f1f7f1;
+  border-color: #DCD5FF;
+  background: #F3F1FF;
 }
 
 .scenario-budget-card > span {
   display: block;
   margin-bottom: 11px;
-  color: #7b8981;
+  color: #70788F;
   font-size: 10px;
   line-height: 1.5;
 }
 
 .scenario-budget-card > strong {
   display: block;
-  color: #347c6c;
+  color: #5145C5;
   font-size: clamp(19px, 2vw, 24px);
   font-weight: 800;
   letter-spacing: -0.8px;
@@ -494,13 +494,13 @@
 }
 
 .scenario-budget-card > strong.negative-value {
-  color: #b66a46;
+  color: #B66A46;
 }
 
 .scenario-budget-card > small {
   display: block;
   margin-top: 9px;
-  color: #929e95;
+  color: #9298AA;
   font-size: 10px;
   line-height: 1.6;
 }
@@ -522,12 +522,12 @@
 }
 
 .scenario-income-heading span {
-  color: #75847c;
+  color: #70788F;
   font-size: 11px;
 }
 
 .scenario-income-heading strong {
-  color: #347c6c;
+  color: #5145C5;
   font-size: 14px;
   font-weight: 800;
 }
@@ -537,13 +537,13 @@
   height: 14px;
   overflow: hidden;
   border-radius: 20px;
-  background: #e9eee9;
+  background: #EEEFF5;
 }
 
 .scenario-income-fill {
   height: 100%;
   border-radius: inherit;
-  background: #43877a;
+  background: #5145C5;
   transition: width 0.25s ease;
 }
 
@@ -553,19 +553,19 @@
   right: 0;
   width: 4px;
   height: 100%;
-  border-right: 3px solid #bd654e;
+  border-right: 3px solid #BD654E;
   background: repeating-linear-gradient(
     135deg,
-    #f4d9ce,
-    #f4d9ce 3px,
-    #fff7f3 3px,
-    #fff7f3 6px
+    #F4D9CE,
+    #F4D9CE 3px,
+    #FFF7F3 3px,
+    #FFF7F3 6px
   );
 }
 
 .scenario-income-labels span,
 .scenario-footnote {
-  color: #89958f;
+  color: #858BA0;
   font-size: 10px;
   line-height: 1.7;
 }
@@ -584,7 +584,7 @@
   align-items: center;
   gap: 12px;
   padding: 15px 0;
-  border-bottom: 1px solid #edf0ed;
+  border-bottom: 1px solid #E7E8F0;
 }
 
 .scenario-change:last-child {
@@ -592,7 +592,7 @@
 }
 
 .scenario-change > span {
-  color: #71817b;
+  color: #70788F;
   font-size: 11px;
 }
 
@@ -609,15 +609,15 @@
 }
 
 .change-good {
-  color: #287b68;
+  color: #3435AD;
 }
 
 .change-bad {
-  color: #b66a46;
+  color: #B66A46;
 }
 
 .scenario-neutral {
-  color: #89958f;
+  color: #858BA0;
   font-size: 11px;
 }
 
@@ -629,10 +629,10 @@
   gap: 13px;
   margin-top: 27px;
   padding: 19px 20px;
-  border: 1px solid #dce9dd;
+  border: 1px solid #DCD5FF;
   border-radius: 10px;
-  background: #f0f6f0;
-  color: #43877a;
+  background: #F3F1FF;
+  color: #5145C5;
 }
 
 .scenario-insight > svg {
@@ -643,32 +643,32 @@
 .scenario-insight strong {
   display: block;
   margin-bottom: 7px;
-  color: #355c50;
+  color: #29266E;
   font-size: 12px;
 }
 
 .scenario-insight p {
   margin: 0;
-  color: #718079;
+  color: #62618B;
   font-size: 11px;
   line-height: 1.8;
 }
 
 .scenario-insight-warning {
-  border-color: #efdfd2;
-  background: #fff8f3;
-  color: #a66b4e;
+  border-color: #EFDFD2;
+  background: #FFF8F3;
+  color: #A66B4E;
 }
 
 .scenario-insight-warning strong {
-  color: #925c43;
+  color: #925C43;
 }
 
 /* FOOTER */
 
 .scenario-disclaimer {
   margin: 18px 0 0;
-  color: #929c96;
+  color: #858BA0;
   font-size: 10px;
   line-height: 1.8;
 }
@@ -684,11 +684,11 @@
   min-height: 44px;
   align-items: center;
   gap: 9px;
-  border: 1px solid #e0e8e1;
+  border: 1px solid #E7E8F0;
   border-radius: 8px;
   background: transparent;
   padding: 0 17px;
-  color: #526762;
+  color: #48536D;
   font-family: inherit;
   font-size: 11px;
   font-weight: 750;
@@ -697,9 +697,9 @@
 }
 
 .scenario-back-button:hover {
-  border-color: #a9c9bb;
-  background: #f0f6f0;
-  color: #286e65;
+  border-color: #C9C5F2;
+  background: #F3F1FF;
+  color: #3435AD;
 }
 
 /* RESPONSIVE */
@@ -720,7 +720,7 @@
 
   .scenario-controls {
     padding-bottom: 30px;
-    border-bottom: 1px solid #e5ebe5;
+    border-bottom: 1px solid #E7E8F0;
   }
 }
 
