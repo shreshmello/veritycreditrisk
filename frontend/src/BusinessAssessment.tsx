@@ -242,10 +242,17 @@ function BusinessAssessment({ onBack }: Props) {
   return (
     <main className="business-page">
       <header className="business-nav">
-        <button className="business-brand" onClick={onBack}>
-          <span className="brand-mark">v.</span>
-          <span>verity</span>
-        </button>
+        <button
+  className="business-brand"
+  onClick={onBack}
+  aria-label="Back to Verity"
+>
+  <img
+    src="/verity-logo.png"
+    alt="Verity"
+    className="business-logo"
+  />
+</button>
 
         <div className="business-nav-label">SMALL BUSINESS</div>
 

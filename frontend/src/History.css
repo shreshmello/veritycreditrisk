@@ -640,3 +640,350 @@
     padding: 19px;
   }
 }
+
+/* =========================================
+   VERITY — MY DECISIONS BRAND UPDATE
+   ========================================= */
+
+.history-page {
+  background: var(--verity-background, #FAFAFD);
+  color: var(--verity-navy, #111D3B);
+}
+
+/* Navigation */
+
+.history-nav {
+  height: 82px;
+  padding: 0 6%;
+  border-bottom-color: var(--verity-border, #E7E8F0);
+  background: #FFFFFF;
+}
+
+.history-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.history-logo {
+  display: block;
+  width: 185px;
+  max-height: 54px;
+  object-fit: contain;
+}
+
+.history-back {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-back:hover {
+  color: var(--verity-indigo, #3435AD);
+}
+
+.history-nav-label {
+  color: var(--verity-text-muted, #9299AA);
+}
+
+/* Page heading */
+
+.history-eyebrow,
+.history-section-eyebrow {
+  color: var(--verity-violet, #7955E5);
+}
+
+.history-heading h1,
+.history-detail-heading h1 {
+  color: var(--verity-navy, #111D3B);
+  font-family: 'Manrope', sans-serif;
+}
+
+.history-description {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-count {
+  border-color: var(--verity-border, #E7E8F0);
+  background: #FFFFFF;
+  color: var(--verity-indigo, #3435AD);
+}
+
+/* Filters */
+
+.history-filter {
+  border-color: var(--verity-border, #E7E8F0);
+  background: #FFFFFF;
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-filter:hover {
+  border-color: var(--verity-violet, #7955E5);
+  color: var(--verity-indigo, #3435AD);
+}
+
+.history-filter.active {
+  border-color: var(--verity-indigo, #3435AD);
+  background: var(--verity-lavender, #EEEAFE);
+  color: var(--verity-indigo, #3435AD);
+}
+
+.history-filter span {
+  background: var(--verity-surface-soft, #F5F5FA);
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-filter.active span {
+  background: #FFFFFF;
+  color: var(--verity-indigo, #3435AD);
+}
+
+/* Assessment cards */
+
+.history-list {
+  gap: 16px;
+}
+
+.history-card {
+  align-items: center;
+  border-color: var(--verity-border, #E7E8F0);
+  border-radius: 15px;
+  background: #FFFFFF;
+  box-shadow: 0 3px 14px rgba(17, 29, 59, 0.025);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.history-card:hover {
+  border-color: #C9C4EF;
+  box-shadow: 0 9px 25px rgba(17, 29, 59, 0.06);
+  transform: translateY(-2px);
+}
+
+.history-card-icon,
+.history-empty-icon {
+  background: var(--verity-lavender, #EEEAFE);
+  color: var(--verity-indigo, #3435AD);
+}
+
+.history-type {
+  color: var(--verity-violet, #7955E5);
+}
+
+.history-date {
+  color: var(--verity-text-muted, #9299AA);
+}
+
+.history-card h2 {
+  color: var(--verity-navy, #111D3B);
+}
+
+.history-card p {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-view-link {
+  color: var(--verity-indigo, #3435AD);
+}
+
+/* Delete action */
+
+.history-delete {
+  color: #9299AA;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.history-delete:hover {
+  background: #FFF0F0;
+  color: #B34E55;
+}
+
+.history-detail-delete {
+  border-color: #F0DFE0;
+  background: #FFFFFF;
+}
+
+/* Empty and loading states */
+
+.history-empty,
+.history-state,
+.history-filter-empty {
+  border-color: var(--verity-border, #E7E8F0);
+  background: #FFFFFF;
+}
+
+.history-empty h2 {
+  color: var(--verity-navy, #111D3B);
+}
+
+.history-empty p,
+.history-state,
+.history-filter-empty {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-primary-button {
+  background: var(--verity-indigo, #3435AD);
+  color: #FFFFFF;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.history-primary-button:hover {
+  background: var(--verity-primary-hover, #4034AE);
+  transform: translateY(-1px);
+}
+
+/* Errors */
+
+.history-error {
+  border-color: #F0D7D9;
+  background: #FFF7F7;
+  color: #A34F58;
+}
+
+/* Detail view */
+
+.history-detail-heading {
+  border-bottom-color: var(--verity-border, #E7E8F0);
+}
+
+.history-title-area h1 {
+  color: var(--verity-navy, #111D3B);
+}
+
+.history-rename-button {
+  border-color: var(--verity-border, #E7E8F0);
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-rename-button:hover {
+  border-color: var(--verity-violet, #7955E5);
+  color: var(--verity-indigo, #3435AD);
+}
+
+.history-title-edit input {
+  border-color: var(--verity-border, #E7E8F0);
+  color: var(--verity-navy, #111D3B);
+}
+
+.history-title-edit input:focus {
+  border-color: var(--verity-violet, #7955E5);
+  box-shadow: 0 0 0 3px var(--verity-focus, rgba(121, 85, 229, 0.22));
+}
+
+.history-icon-button {
+  border-color: var(--verity-border, #E7E8F0);
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-save-title {
+  border-color: var(--verity-indigo, #3435AD);
+  background: var(--verity-indigo, #3435AD);
+  color: #FFFFFF;
+}
+
+.history-detail-meta {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-detail-type {
+  color: var(--verity-indigo, #3435AD);
+}
+
+/* Assessment overview */
+
+.history-detail-summary {
+  border-color: #DCD8F5;
+  background: var(--verity-lavender, #EEEAFE);
+}
+
+.history-detail-summary p:last-child {
+  color: var(--verity-navy, #111D3B);
+}
+
+/* Input and result sections */
+
+.history-data-heading h2 {
+  color: var(--verity-navy, #111D3B);
+}
+
+.history-data-card {
+  border-color: var(--verity-border, #E7E8F0);
+  background: #FFFFFF;
+  box-shadow: 0 3px 14px rgba(17, 29, 59, 0.025);
+}
+
+.history-data-row {
+  border-bottom-color: var(--verity-border, #E7E8F0);
+}
+
+.history-data-label {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-data-value {
+  color: var(--verity-navy, #111D3B);
+}
+
+.history-muted-value {
+  color: var(--verity-text-muted, #9299AA);
+}
+
+.history-data-list-item {
+  background: var(--verity-surface-soft, #F5F5FA);
+  color: var(--verity-navy, #111D3B);
+}
+
+.history-no-data {
+  border-color: var(--verity-border, #E7E8F0);
+  background: #FFFFFF;
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.history-detail-footnote {
+  color: var(--verity-text-muted, #9299AA);
+}
+
+/* Keyboard accessibility */
+
+.history-back:focus-visible,
+.history-brand:focus-visible,
+.history-filter:focus-visible,
+.history-open:focus-visible,
+.history-delete:focus-visible,
+.history-primary-button:focus-visible,
+.history-rename-button:focus-visible,
+.history-icon-button:focus-visible {
+  outline: 3px solid var(--verity-focus, rgba(121, 85, 229, 0.22));
+  outline-offset: 3px;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 800px) {
+  .history-logo {
+    width: 165px;
+  }
+}
+
+@media (max-width: 650px) {
+  .history-nav {
+    height: 72px;
+    padding: 0 5%;
+  }
+
+  .history-logo {
+    width: 145px;
+    max-height: 46px;
+  }
+
+  .history-content {
+    width: 90%;
+    padding-top: 42px;
+  }
+
+  .history-card {
+    align-items: flex-start;
+  }
+}

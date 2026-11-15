@@ -290,10 +290,17 @@ function History({ onBack }: HistoryProps) {
           {selectedAssessment ? 'Back to My Decisions' : 'Back to Verity'}
         </button>
 
-        <div className="history-brand">
-          <span className="history-brand-mark">V</span>
-          Verity
-        </div>
+       <button
+  className="history-brand"
+  onClick={onBack}
+  aria-label="Back to Verity"
+>
+  <img
+    src="/verity-logo.png"
+    alt="Verity"
+    className="history-logo"
+  />
+</button>
 
         <span className="history-nav-label">MY DECISIONS</span>
       </header>

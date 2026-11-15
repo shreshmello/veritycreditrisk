@@ -615,3 +615,273 @@
   font-size: 11px;
   font-weight: 700;
 }
+
+/* =========================================
+   VERITY — BUSINESS ASSESSMENT BRAND UPDATE
+   ========================================= */
+
+.business-page {
+  background: var(--verity-background, #FAFAFD);
+  color: var(--verity-text, #111D3B);
+}
+
+/* Navigation */
+
+.business-nav {
+  background: #FFFFFF;
+  border-bottom-color: var(--verity-border, #E7E8F0);
+}
+
+.business-brand {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.business-logo {
+  display: block;
+  width: 185px;
+  max-height: 54px;
+  object-fit: contain;
+}
+
+.business-nav-label {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-exit {
+  border-color: var(--verity-border, #E7E8F0);
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-exit:hover {
+  background: var(--verity-surface-soft, #F5F5FA);
+}
+
+/* Main layout */
+
+.business-sidebar h1 {
+  color: var(--verity-navy, #111D3B);
+}
+
+.business-sidebar h1 span {
+  color: var(--verity-indigo, #3435AD);
+}
+
+.business-kicker {
+  color: var(--verity-violet, #7955E5);
+}
+
+.business-sidebar > p {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+/* Progress steps */
+
+.business-step-number {
+  border-color: var(--verity-border, #E7E8F0);
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-step.active .business-step-number {
+  border-color: var(--verity-indigo, #3435AD);
+  background: var(--verity-lavender, #EEEAFE);
+  color: var(--verity-indigo, #3435AD);
+}
+
+.business-step strong {
+  color: var(--verity-navy, #111D3B);
+}
+
+.business-step div span {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-privacy {
+  border-color: var(--verity-border, #E7E8F0);
+  background: var(--verity-surface-soft, #F5F5FA);
+  color: var(--verity-indigo, #3435AD);
+}
+
+.business-privacy strong {
+  color: var(--verity-navy, #111D3B);
+}
+
+.business-privacy p {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+/* Form container */
+
+.business-main {
+  border-color: var(--verity-border, #E7E8F0);
+  background: #FFFFFF;
+  box-shadow: var(--verity-shadow, 0 8px 30px rgba(17, 29, 59, 0.06));
+}
+
+.business-progress > div:first-child {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-progress-track {
+  background: var(--verity-surface-soft, #F5F5FA);
+}
+
+.business-progress-track > div {
+  background: var(--verity-indigo, #3435AD);
+}
+
+.business-form h2 {
+  color: var(--verity-navy, #111D3B);
+}
+
+.business-description {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+/* Form fields */
+
+.business-field label {
+  color: var(--verity-navy, #111D3B);
+}
+
+.business-field input,
+.business-field select,
+.business-field textarea {
+  border-color: var(--verity-border, #E7E8F0);
+  color: var(--verity-text, #111D3B);
+}
+
+.business-field input:focus,
+.business-field select:focus,
+.business-field textarea:focus {
+  border-color: var(--verity-violet, #7955E5);
+  box-shadow: 0 0 0 3px var(--verity-focus, rgba(121, 85, 229, 0.22));
+}
+
+.business-field input::placeholder,
+.business-field textarea::placeholder {
+  color: var(--verity-text-muted, #9299AA);
+}
+
+.business-field small {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-input-prefix > span {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+/* Information panels */
+
+.business-help,
+.business-model-note {
+  background: var(--verity-lavender, #EEEAFE);
+  color: var(--verity-indigo, #3435AD);
+}
+
+.business-help p,
+.business-model-note p {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-help strong,
+.business-model-note strong {
+  color: var(--verity-navy, #111D3B);
+}
+
+/* Buttons */
+
+.business-continue {
+  background: var(--verity-indigo, #3435AD);
+  color: #FFFFFF;
+}
+
+.business-continue:hover:not(:disabled) {
+  background: var(--verity-primary-hover, #4034AE);
+}
+
+.business-back {
+  border-color: var(--verity-border, #E7E8F0);
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-back:hover {
+  background: var(--verity-surface-soft, #F5F5FA);
+}
+
+/* Results */
+
+.business-exposure {
+  background: var(--verity-navy, #111D3B);
+}
+
+.business-exposure span {
+  color: #D4D1F5;
+}
+
+.business-exposure small {
+  color: #D0D3E0;
+}
+
+.business-result-card {
+  border-color: var(--verity-border, #E7E8F0);
+  background: #FFFFFF;
+}
+
+.business-result-card span {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-result-card strong {
+  color: var(--verity-navy, #111D3B);
+}
+
+.business-review-panel {
+  border-color: var(--verity-border, #E7E8F0);
+}
+
+.business-review-heading {
+  color: var(--verity-indigo, #3435AD);
+}
+
+.business-review-heading strong {
+  color: var(--verity-navy, #111D3B);
+}
+
+.business-review-heading span,
+.business-review-panel ul {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-save-panel {
+  border-color: var(--verity-border, #E7E8F0);
+  background: var(--verity-surface-soft, #F5F5FA);
+}
+
+.business-save-panel h3 {
+  color: var(--verity-navy, #111D3B);
+}
+
+.business-save-panel > p {
+  color: var(--verity-text-secondary, #70788F);
+}
+
+.business-save-success {
+  color: var(--verity-indigo, #3435AD) !important;
+}
+
+/* Responsive logo */
+
+@media (max-width: 800px) {
+  .business-logo {
+    width: 165px;
+  }
+}
+
+@media (max-width: 520px) {
+  .business-logo {
+    width: 145px;
+    max-height: 46px;
+  }
+}

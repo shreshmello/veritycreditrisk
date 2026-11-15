@@ -1,3 +1,4 @@
+
 import { useState, type FormEvent } from 'react'
 import {
   ArrowRight,
@@ -62,11 +63,15 @@ export default function Auth() {
 
         if (error) throw error
 
-        setMessage('If an account exists for this email, a password reset link has been sent.')
+        setMessage(
+          'If an account exists for this email, a password reset link has been sent.'
+        )
       }
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : 'Something went wrong. Please try again.'
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again.'
       )
     } finally {
       setLoading(false)
@@ -81,41 +86,58 @@ export default function Auth() {
 
   return (
     <main className="auth-page">
-      <div className="auth-topbar">
+      <header className="auth-topbar">
         <a className="auth-brand" href="/" aria-label="Verity home">
-          <span className="auth-brand-mark">v.</span>
-          <span>verity</span>
+          <img src="/verity-logo.png" alt="Verity" />
         </a>
-        <span className="auth-topbar-note">
-          <ShieldCheck size={15} />
-          Thoughtful financial decisions start here
-        </span>
-      </div>
+
+        <div className="auth-topbar-note">
+          <ShieldCheck size={16} />
+          <span>Thoughtful financial decisions start here</span>
+        </div>
+      </header>
 
       <section className="auth-layout">
         <div className="auth-intro">
-          <span className="auth-eyebrow">CLARITY OVER COMPLEXITY</span>
+          <span className="auth-eyebrow">
+            FINANCIAL DECISIONS, MADE CLEARER
+          </span>
 
           <h1>
-            A clearer way
+            Make decisions
             <br />
-            to approach
+            with a clearer
             <br />
-            <span>financial decisions.</span>
+            <span>picture of risk.</span>
           </h1>
 
           <p>
             Understand your options, explore possible outcomes,
-            and make decisions with more information.
+            and make more informed financial decisions.
           </p>
 
           <div className="auth-trust">
             <div className="auth-trust-icon">
-              <ShieldCheck size={20} />
+              <ShieldCheck size={21} />
             </div>
             <div>
-              <strong>Your decisions, explained.</strong>
+              <strong>Clarity over complexity.</strong>
               <span>Transparent guidance. No false certainty.</span>
+            </div>
+          </div>
+
+          <div className="auth-values">
+            <div>
+              <CheckCircle2 size={16} />
+              <span>Understand your options</span>
+            </div>
+            <div>
+              <CheckCircle2 size={16} />
+              <span>Explore possible outcomes</span>
+            </div>
+            <div>
+              <CheckCircle2 size={16} />
+              <span>Know when more review is needed</span>
             </div>
           </div>
         </div>
@@ -237,6 +259,7 @@ export default function Auth() {
                   : mode === 'reset'
                     ? 'Send reset link'
                     : 'Sign in'}
+
               {!loading && <ArrowRight size={17} />}
             </button>
           </form>
@@ -268,13 +291,14 @@ export default function Auth() {
 
           <div className="auth-disclaimer">
             <ShieldCheck size={14} />
-            Your account is protected by Supabase authentication.
+            <span>Your account is protected by Supabase authentication.</span>
           </div>
         </div>
       </section>
 
       <footer className="auth-footer">
-        Verity · Making financial decisions clearer.
+        <span>Verity</span>
+        <span>Making financial decisions clearer.</span>
       </footer>
     </main>
   )

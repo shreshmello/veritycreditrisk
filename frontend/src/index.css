@@ -1,1 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 @import "tailwindcss";
+
+/* =========================================
+   VERITY — GLOBAL BRAND SYSTEM
+   ========================================= */
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+
+  /* Brand colors */
+  --verity-navy: #111D3B;
+  --verity-indigo: #3435AD;
+  --verity-violet: #7955E5;
+  --verity-lavender: #EEEAFE;
+
+  /* Backgrounds */
+  --verity-background: #FAFAFD;
+  --verity-surface: #FFFFFF;
+  --verity-surface-soft: #F5F5FA;
+
+  /* Text */
+  --verity-text: #111D3B;
+  --verity-text-secondary: #70788F;
+  --verity-text-muted: #9299AA;
+
+  /* Borders and shadows */
+  --verity-border: #E7E8F0;
+  --verity-shadow: 0 8px 30px rgba(17, 29, 59, 0.06);
+
+  /* Interactive states */
+  --verity-primary: #5144C8;
+  --verity-primary-hover: #4034AE;
+  --verity-focus: rgba(121, 85, 229, 0.22);
+
+  /* Legacy variables used by existing pages */
+  --navy: #111D3B;
+  --teal: #5144C8;
+  --cream: #FAFAFD;
+
+  color: var(--verity-text);
+  background: var(--verity-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--verity-text);
+  background: var(--verity-background);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  color: white;
+  background: var(--verity-indigo);
+}
+
+:focus-visible {
+  outline: 3px solid var(--verity-focus);
+  outline-offset: 3px;
+}

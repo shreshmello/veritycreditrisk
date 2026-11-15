@@ -757,10 +757,13 @@ function PersonalAssessment({ onBack }: Props) {
   return (
     <main className="assessment-page">
       <header className="assessment-nav">
-        <button className="assessment-brand" onClick={onBack}>
-          <span className="brand-mark">v.</span>
-          <span>verity</span>
-        </button>
+       <button className="assessment-brand" onClick={onBack}>
+  <img
+    src="/verity-logo.png"
+    alt="Verity"
+    className="assessment-logo"
+  />
+</button>
 
         <div className="assessment-nav-label">PERSONAL BORROWING</div>
 

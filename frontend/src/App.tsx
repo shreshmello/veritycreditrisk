@@ -93,19 +93,25 @@ function App() {
 
   return (
     <main>
+      {/* NAVIGATION */}
       <header className="navbar">
         <a className="brand" href="#" aria-label="Verity home">
-          <span className="brand-mark">v.</span>
-          <span>verity</span>
+          <img
+            src="/verity-logo.png"
+            alt="Verity"
+            className="verity-logo"
+          />
         </a>
 
         <nav className={menuOpen ? 'nav-links nav-open' : 'nav-links'}>
           <a href="#how-it-works" onClick={() => setMenuOpen(false)}>
             How it works
           </a>
+
           <a href="#principles" onClick={() => setMenuOpen(false)}>
             Our approach
           </a>
+
           <button
             className="research-nav-link"
             onClick={() => {
@@ -115,6 +121,7 @@ function App() {
           >
             Research
           </button>
+
           <a href="#about" onClick={() => setMenuOpen(false)}>
             About Verity
           </a>
@@ -134,6 +141,7 @@ function App() {
             className="nav-cta"
             onClick={async () => {
               const { error } = await supabase.auth.signOut()
+
               if (error) {
                 console.error('Sign out failed:', error.message)
               }
@@ -147,11 +155,13 @@ function App() {
           className="mobile-menu"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <X /> : <Menu />}
         </button>
       </header>
 
+      {/* HERO */}
       <section className="hero">
         <div className="hero-content">
           <div className="eyebrow">
@@ -178,6 +188,7 @@ function App() {
             <a href="#get-started" className="primary-button">
               Explore Verity <ArrowRight size={18} />
             </a>
+
             <a href="#how-it-works" className="secondary-button">
               See how it works
             </a>
@@ -185,7 +196,9 @@ function App() {
 
           <div className="trust-note">
             <ShieldCheck size={17} />
-            <span>Transparent. Uncertainty-aware. Human-centered.</span>
+            <span>
+              Transparent. Uncertainty-aware. Human-centered.
+            </span>
           </div>
         </div>
 
@@ -197,11 +210,16 @@ function App() {
               <div className="insight-icon">
                 <ChartNoAxesCombined size={19} />
               </div>
-              <span className="insight-label">THE VERITY APPROACH</span>
+
+              <span className="insight-label">
+                THE VERITY APPROACH
+              </span>
+
               <span className="live-dot" />
             </div>
 
             <h3>A clearer picture of risk.</h3>
+
             <p>
               A financial decision deserves more than a
               simple yes or no.
@@ -213,6 +231,7 @@ function App() {
               <div className="insight-row-icon teal">
                 <CheckCircle2 size={17} />
               </div>
+
               <div>
                 <strong>Understand</strong>
                 <span>See the factors behind a decision.</span>
@@ -223,6 +242,7 @@ function App() {
               <div className="insight-row-icon gold">
                 <CircleHelp size={17} />
               </div>
+
               <div>
                 <strong>Explore</strong>
                 <span>Compare options and possible outcomes.</span>
@@ -233,6 +253,7 @@ function App() {
               <div className="insight-row-icon blue">
                 <ShieldCheck size={17} />
               </div>
+
               <div>
                 <strong>Decide thoughtfully</strong>
                 <span>Know when more review is needed.</span>
@@ -249,6 +270,7 @@ function App() {
             <span className="floating-note-icon">
               <ShieldCheck size={17} />
             </span>
+
             <div>
               <strong>Not sure?</strong>
               <span>That's okay. Start there.</span>
@@ -257,10 +279,15 @@ function App() {
         </div>
       </section>
 
+      {/* PATHWAYS */}
       <section className="pathways" id="get-started">
         <div className="section-heading">
-          <span className="section-kicker">A BETTER STARTING POINT</span>
+          <span className="section-kicker">
+            A BETTER STARTING POINT
+          </span>
+
           <h2>What brings you to Verity?</h2>
+
           <p>
             Different financial decisions need different kinds
             of support. Choose the path that fits your situation.
@@ -273,10 +300,16 @@ function App() {
               <div className="path-icon">
                 <Wallet size={23} />
               </div>
+
               <span className="path-number">01 / PERSONAL</span>
             </div>
 
-            <h3>I'm considering<br />a loan.</h3>
+            <h3>
+              I'm considering
+              <br />
+              a loan.
+            </h3>
+
             <p>
               Understand what borrowing could mean for you.
               Explore repayment scenarios, compare loan terms,
@@ -285,16 +318,28 @@ function App() {
             </p>
 
             <ul className="path-features">
-              <li><CheckCircle2 size={16} /> Explore affordability</li>
-              <li><CheckCircle2 size={16} /> Compare loan scenarios</li>
-              <li><CheckCircle2 size={16} /> Understand the trade-offs</li>
+              <li>
+                <CheckCircle2 size={16} />
+                Explore affordability
+              </li>
+
+              <li>
+                <CheckCircle2 size={16} />
+                Compare loan scenarios
+              </li>
+
+              <li>
+                <CheckCircle2 size={16} />
+                Understand the trade-offs
+              </li>
             </ul>
 
             <button
               className="path-button"
               onClick={() => choosePath('personal')}
             >
-              Explore personal borrowing <ArrowRight size={17} />
+              Explore personal borrowing
+              <ArrowRight size={17} />
             </button>
           </article>
 
@@ -303,10 +348,16 @@ function App() {
               <div className="path-icon business-icon">
                 <Building2 size={23} />
               </div>
+
               <span className="path-number">02 / BUSINESS</span>
             </div>
 
-            <h3>I'm evaluating<br />a customer.</h3>
+            <h3>
+              I'm evaluating
+              <br />
+              a customer.
+            </h3>
+
             <p>
               Make more informed decisions about offering
               payment terms. Understand potential risk,
@@ -315,16 +366,28 @@ function App() {
             </p>
 
             <ul className="path-features">
-              <li><CheckCircle2 size={16} /> Assess payment risk</li>
-              <li><CheckCircle2 size={16} /> Explore safer terms</li>
-              <li><CheckCircle2 size={16} /> Identify uncertain cases</li>
+              <li>
+                <CheckCircle2 size={16} />
+                Assess payment risk
+              </li>
+
+              <li>
+                <CheckCircle2 size={16} />
+                Explore safer terms
+              </li>
+
+              <li>
+                <CheckCircle2 size={16} />
+                Identify uncertain cases
+              </li>
             </ul>
 
             <button
               className="path-button"
               onClick={() => choosePath('business')}
             >
-              Explore business decisions <ArrowRight size={17} />
+              Explore business decisions
+              <ArrowRight size={17} />
             </button>
           </article>
         </div>
@@ -334,18 +397,21 @@ function App() {
             <div className="selection-check">
               <CheckCircle2 size={21} />
             </div>
+
             <div>
               <strong>
                 {selectedPath === 'personal'
                   ? 'Personal borrowing selected'
                   : 'Business decision support selected'}
               </strong>
+
               <p>
                 {selectedPath === 'personal'
                   ? 'Your next step will be a guided borrowing assessment.'
                   : 'Your next step will be a guided business assessment.'}
               </p>
             </div>
+
             <button
               className="selection-close"
               onClick={() => setSelectedPath(null)}
@@ -357,10 +423,17 @@ function App() {
         )}
       </section>
 
+      {/* HOW IT WORKS */}
       <section className="how-section" id="how-it-works">
         <div className="how-intro">
-          <span className="section-kicker">HOW VERITY WORKS</span>
-          <h2>Better decisions start with better understanding.</h2>
+          <span className="section-kicker">
+            HOW VERITY WORKS
+          </span>
+
+          <h2>
+            Better decisions start with better understanding.
+          </h2>
+
           <p>
             Verity is designed to make financial information
             easier to understand, without pretending every
@@ -371,8 +444,10 @@ function App() {
         <div className="how-steps">
           <div className="how-step">
             <span>01</span>
+
             <div>
               <h3>Start with your situation</h3>
+
               <p>
                 Share what matters to your decision.
                 You can ask questions and take things
@@ -383,8 +458,10 @@ function App() {
 
           <div className="how-step">
             <span>02</span>
+
             <div>
               <h3>Understand your options</h3>
+
               <p>
                 Explore relevant factors, possible outcomes,
                 and the trade-offs between different choices.
@@ -394,8 +471,10 @@ function App() {
 
           <div className="how-step">
             <span>03</span>
+
             <div>
               <h3>Know what remains uncertain</h3>
+
               <p>
                 Verity makes limitations visible and highlights
                 when additional information or human review
@@ -406,10 +485,15 @@ function App() {
         </div>
       </section>
 
+      {/* PRINCIPLES */}
       <section className="principles-section" id="principles">
         <div className="principles-heading">
-          <span className="section-kicker">BUILT AROUND PEOPLE</span>
+          <span className="section-kicker">
+            BUILT AROUND PEOPLE
+          </span>
+
           <h2>Technology should adapt to people.</h2>
+
           <p>
             Not the other way around. Verity aims to make
             financial decision support understandable and
@@ -420,43 +504,71 @@ function App() {
 
         <div className="principle-items">
           <div className="principle-item">
-            <div className="principle-icon"><Wallet size={20} /></div>
+            <div className="principle-icon">
+              <Wallet size={20} />
+            </div>
+
             <div>
               <h3>Your pace, your level</h3>
-              <p>Clear explanations when you need them. Less clutter when you don't.</p>
+              <p>
+                Clear explanations when you need them.
+                Less clutter when you don't.
+              </p>
             </div>
           </div>
 
           <div className="principle-item">
-            <div className="principle-icon"><ShieldCheck size={20} /></div>
+            <div className="principle-icon">
+              <ShieldCheck size={20} />
+            </div>
+
             <div>
               <h3>Honest about uncertainty</h3>
-              <p>No false confidence. Some decisions deserve another look.</p>
+              <p>
+                No false confidence. Some decisions deserve
+                another look.
+              </p>
             </div>
           </div>
 
           <div className="principle-item">
-            <div className="principle-icon"><CircleHelp size={20} /></div>
+            <div className="principle-icon">
+              <CircleHelp size={20} />
+            </div>
+
             <div>
               <h3>Explanations, not just scores</h3>
-              <p>Understand why a result appears and what it does not tell you.</p>
+              <p>
+                Understand why a result appears and what
+                it does not tell you.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer className="footer" id="about">
-        <a className="brand footer-brand" href="#">
-          <span className="brand-mark">v.</span>
-          <span>verity</span>
+        <a
+          className="brand footer-brand"
+          href="#"
+          aria-label="Verity home"
+        >
+          <img
+            src="/verity-logo.png"
+            alt="Verity"
+            className="verity-logo footer-verity-logo"
+          />
         </a>
+
         <p>Making financial decisions clearer.</p>
 
         <button
           className="research-footer-link"
           onClick={() => setShowResearch(true)}
         >
-          Explore our research <ArrowRight size={15} />
+          Explore our research
+          <ArrowRight size={15} />
         </button>
 
         <span className="footer-caption">
