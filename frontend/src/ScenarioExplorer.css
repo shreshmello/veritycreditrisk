@@ -1,0 +1,796 @@
+
+/* =========================================
+   VERITY — SCENARIO EXPLORER
+   Refined fintech design
+   ========================================= */
+
+.scenario-page {
+  min-height: 100vh;
+  padding: 0 6%;
+  background: #fafbf9;
+  color: #19343b;
+  font-family: inherit;
+}
+
+/* NAVIGATION */
+
+.scenario-nav {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e9eeea;
+}
+
+.scenario-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: none;
+  color: #19343b;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  cursor: pointer;
+}
+
+.scenario-brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 11px;
+  background: #286e65;
+  color: white;
+  font-size: 17px;
+}
+
+.scenario-nav-label {
+  color: #899791;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.8px;
+}
+
+.scenario-exit {
+  border: 0;
+  background: transparent;
+  color: #73827c;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.scenario-exit:hover {
+  color: #286e65;
+}
+
+/* PAGE HEADER */
+
+.scenario-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 66px 0 90px;
+}
+
+.scenario-heading {
+  max-width: 690px;
+  margin-bottom: 43px;
+}
+
+.scenario-kicker {
+  display: block;
+  margin-bottom: 14px;
+  color: #43877a;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.scenario-heading h1 {
+  margin: 0 0 17px;
+  color: #19343b;
+  font-size: clamp(36px, 4.5vw, 51px);
+  font-weight: 750;
+  letter-spacing: -2.2px;
+  line-height: 1.1;
+}
+
+.scenario-heading h1 span {
+  color: #43877a;
+}
+
+.scenario-heading p {
+  max-width: 580px;
+  margin: 0;
+  color: #788780;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* MAIN LAYOUT */
+
+.scenario-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.4fr);
+  align-items: start;
+  gap: 38px;
+}
+
+.scenario-controls,
+.scenario-results {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* SECTION HEADINGS */
+
+.scenario-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 30px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e7ece7;
+}
+
+.scenario-card-heading h2 {
+  margin: 0;
+  color: #213b41;
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.scenario-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #e1e9e3;
+  border-radius: 7px;
+  background: white;
+  padding: 8px 11px;
+  color: #657970;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scenario-reset:hover {
+  border-color: #a9c9bb;
+  color: #286e65;
+  background: #f4f8f4;
+}
+
+/* CONTROLS */
+
+.scenario-control {
+  margin-bottom: 34px;
+}
+
+.scenario-control-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.scenario-control-heading label {
+  color: #526760;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.scenario-control-heading strong {
+  color: #286e65;
+  font-size: 16px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.scenario-control input[type="range"] {
+  width: 100%;
+  height: 5px;
+  margin: 0;
+  border-radius: 20px;
+  background: #e3eae4;
+  accent-color: #43877a;
+  cursor: pointer;
+}
+
+.scenario-control input[type="range"]:focus-visible {
+  outline: 3px solid rgba(67, 135, 122, 0.2);
+  outline-offset: 5px;
+}
+
+.scenario-range-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 11px;
+  color: #9ba69f;
+  font-size: 10px;
+}
+
+/* ORIGINAL SCENARIO NOTE */
+
+.scenario-original-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 38px 0 29px;
+  padding: 16px;
+  border: 0;
+  border-left: 3px solid #83ad9c;
+  border-radius: 0 8px 8px 0;
+  background: #f0f5f0;
+  color: #43877a;
+}
+
+.scenario-original-note svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.scenario-original-note p {
+  margin: 0;
+  color: #6d7e74;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.scenario-original-values {
+  padding-top: 23px;
+  border-top: 1px solid #e7ece7;
+}
+
+.scenario-original-values > span {
+  display: block;
+  margin-bottom: 14px;
+  color: #8b9991;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.scenario-original-values > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.scenario-original-values > div span {
+  color: #788780;
+  font-size: 11px;
+}
+
+.scenario-original-values > div strong {
+  color: #304a4d;
+  font-size: 11px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+/* LIVE RESULTS */
+
+.scenario-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #548477;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.scenario-live-indicator > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4d9a7d;
+  box-shadow: 0 0 0 3px #e8f2eb;
+}
+
+/* PAYMENT COMPARISON */
+
+.scenario-payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin-bottom: 33px;
+}
+
+.scenario-payment-card {
+  min-width: 0;
+  padding: 23px 21px;
+  border: 1px solid #e6ebe6;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.scenario-payment-card.featured {
+  border-color: #d1e3d7;
+  background: #eff6f0;
+}
+
+.scenario-payment-card span,
+.scenario-payment-card small {
+  display: block;
+  color: #829087;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.scenario-payment-card strong {
+  display: block;
+  margin: 13px 0 8px;
+  color: #2a4549;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.scenario-payment-card.featured strong {
+  color: #286e65;
+}
+
+.scenario-payment-card small {
+  color: #98a39b;
+}
+
+/* RESULT SECTIONS */
+
+.scenario-section {
+  margin-top: 29px;
+  padding-top: 26px;
+  border-top: 1px solid #e7ece7;
+}
+
+.scenario-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 23px;
+  color: #263f43;
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: -0.2px;
+}
+
+.scenario-section h3 svg {
+  color: #43877a;
+}
+
+/* METRICS */
+
+.scenario-metric {
+  margin-bottom: 25px;
+}
+
+.scenario-metric-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.scenario-metric-heading span {
+  color: #75847c;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.scenario-metric-heading strong {
+  color: #30494b;
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.scenario-compare-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.scenario-bar-row {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr) 82px;
+  align-items: center;
+  gap: 12px;
+}
+
+.scenario-bar-row > span {
+  color: #849189;
+  font-size: 10px;
+}
+
+.scenario-bar-row > strong {
+  color: #536761;
+  font-size: 10px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.scenario-bar-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #edf1ed;
+}
+
+.scenario-bar {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.25s ease;
+}
+
+.original-bar {
+  background: #a9c1b5;
+}
+
+.adjusted-bar {
+  background: #43877a;
+}
+
+.interest-bar {
+  background: #d2a66b;
+}
+
+/* BUDGET COMPARISON */
+
+.scenario-budget-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.scenario-budget-card {
+  min-width: 0;
+  padding: 19px 18px;
+  border: 1px solid #e7ece7;
+  border-radius: 10px;
+  background: white;
+}
+
+.scenario-budget-card.adjusted {
+  border-color: #d5e5d8;
+  background: #f1f7f1;
+}
+
+.scenario-budget-card > span {
+  display: block;
+  margin-bottom: 11px;
+  color: #7b8981;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.scenario-budget-card > strong {
+  display: block;
+  color: #347c6c;
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.scenario-budget-card > strong.negative-value {
+  color: #b66a46;
+}
+
+.scenario-budget-card > small {
+  display: block;
+  margin-top: 9px;
+  color: #929e95;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* INCOME VISUAL */
+
+.scenario-income-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.scenario-income-heading,
+.scenario-income-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.scenario-income-heading span {
+  color: #75847c;
+  font-size: 11px;
+}
+
+.scenario-income-heading strong {
+  color: #347c6c;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.scenario-income-track {
+  position: relative;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e9eee9;
+}
+
+.scenario-income-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #43877a;
+  transition: width 0.25s ease;
+}
+
+.scenario-income-overflow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  border-right: 3px solid #bd654e;
+  background: repeating-linear-gradient(
+    135deg,
+    #f4d9ce,
+    #f4d9ce 3px,
+    #fff7f3 3px,
+    #fff7f3 6px
+  );
+}
+
+.scenario-income-labels span,
+.scenario-footnote {
+  color: #89958f;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* CHANGE INDICATORS */
+
+.scenario-change-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.scenario-change {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #edf0ed;
+}
+
+.scenario-change:last-child {
+  border-bottom: 0;
+}
+
+.scenario-change > span {
+  color: #71817b;
+  font-size: 11px;
+}
+
+.scenario-change-value {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.scenario-change-value strong {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.change-good {
+  color: #287b68;
+}
+
+.change-bad {
+  color: #b66a46;
+}
+
+.scenario-neutral {
+  color: #89958f;
+  font-size: 11px;
+}
+
+/* INSIGHT */
+
+.scenario-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 27px;
+  padding: 19px 20px;
+  border: 1px solid #dce9dd;
+  border-radius: 10px;
+  background: #f0f6f0;
+  color: #43877a;
+}
+
+.scenario-insight > svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.scenario-insight strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #355c50;
+  font-size: 12px;
+}
+
+.scenario-insight p {
+  margin: 0;
+  color: #718079;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.scenario-insight-warning {
+  border-color: #efdfd2;
+  background: #fff8f3;
+  color: #a66b4e;
+}
+
+.scenario-insight-warning strong {
+  color: #925c43;
+}
+
+/* FOOTER */
+
+.scenario-disclaimer {
+  margin: 18px 0 0;
+  color: #929c96;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.scenario-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 28px;
+}
+
+.scenario-back-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #e0e8e1;
+  border-radius: 8px;
+  background: transparent;
+  padding: 0 17px;
+  color: #526762;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scenario-back-button:hover {
+  border-color: #a9c9bb;
+  background: #f0f6f0;
+  color: #286e65;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .scenario-page {
+    padding: 0 5%;
+  }
+
+  .scenario-container {
+    padding-top: 45px;
+  }
+
+  .scenario-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .scenario-controls {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5ebe5;
+  }
+}
+
+@media (max-width: 520px) {
+  .scenario-page {
+    padding: 0 19px;
+  }
+
+  .scenario-nav {
+    height: 66px;
+  }
+
+  .scenario-brand {
+    font-size: 19px;
+  }
+
+  .scenario-nav-label {
+    display: none;
+  }
+
+  .scenario-container {
+    padding-top: 35px;
+  }
+
+  .scenario-heading {
+    margin-bottom: 34px;
+  }
+
+  .scenario-heading h1 {
+    font-size: 35px;
+    letter-spacing: -1.5px;
+  }
+
+  .scenario-heading p {
+    font-size: 13px;
+  }
+
+  .scenario-layout {
+    gap: 36px;
+  }
+
+  .scenario-payment-grid,
+  .scenario-budget-comparison {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .scenario-payment-card {
+    padding: 17px 13px;
+  }
+
+  .scenario-payment-card strong {
+    font-size: 20px;
+  }
+
+  .scenario-budget-card {
+    padding: 15px 12px;
+  }
+
+  .scenario-budget-card > strong {
+    font-size: 18px;
+  }
+
+  .scenario-bar-row {
+    grid-template-columns: 54px minmax(0, 1fr) 72px;
+    gap: 8px;
+  }
+
+  .scenario-controls,
+  .scenario-results {
+    width: 100%;
+  }
+}
